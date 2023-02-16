@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping cart</title>
+    <!-- tailwind  daisyUi cdn-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@2.50.1/dist/full.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- header start -->
+    <header>
+      <!-- navbar -->
+      <div class="navbar bg-base-100 shadow-lg lg:px-6">
+        <div class="flex-1">
+          <a class="btn btn-ghost normal-case text-xl">Quick Shopping</a>
+        </div>
+        <div class="flex-none gap-2">
+          <div class="form-control">
+            <input
+              type="text"
+              placeholder="Search"
+              class="input input-bordered"
+            />
+          </div>
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img src="https://picsum.photos/200/300?random=5" />
+              </div>
+            </label>
+            <ul
+              tabindex="0"
+              class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a class="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li><a>Settings</a></li>
+              <li><a>Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- main -->
+    <main>
+      <!-- product section -->
+      <!-- products -->
+      <section class="px-3 lg:px-9 flex flex-col md:flex-row gap-4 mt-6">
+        <div
+          class="products-container w-full md:w-[68%] grid md:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
+          <!-- product -->
+          <div class="card card-compact w-full bg-base-100 shadow-xl">
+            <figure>
+              <img class="w-full h-40" src="./images/coffee.jpg" alt="Shoes" />
+            </figure>
+            <div class="card-body">
+              <h2 id="coffee-name" class="card-title">Coffee JS!</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
+                non.
+              </p>
+              <p>Price: $<span id="coffee-price">110</span></p>
+              <p>Quantity: <span id="coffee-quantity">5</span></p>
+              <div class="card-actions justify-end">
+                <button id="card-coffee" class="btn btn-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <!-- product -->
+          <div class="card card-compact w-full bg-base-100 shadow-xl">
+            <figure>
+              <img
+                class="w-full h-40"
+                src="./images/heart_js.jpg"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Heart JS!</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
+                non.
+              </p>
+              <p>Price: $<span>200</span></p>
+              <p>Quantity: <span>10</span></p>
+              <div class="card-actions justify-end">
+                <button id="card-heart" class="btn btn-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <!-- product -->
+          <div class="card card-compact w-full bg-base-100 shadow-xl">
+            <figure>
+              <img class="w-full h-40" src="./images/panda.png" alt="Shoes" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Panda JS!</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
+                non.
+              </p>
+              <p>Price: $<span>250</span></p>
+              <p>Quantity: <span>5</span></p>
+              <div class="card-actions justify-end">
+                <button id="card-panda" class="btn btn-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <!-- product -->
+          <div class="card card-compact w-full bg-base-100 shadow-xl">
+            <figure>
+              <img
+                class="w-full h-40"
+                src="./images/umbrella.png"
+                alt="Shoes"
+              />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Umbrella JS!</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
+                non.
+              </p>
+              <p>Price: $<span>100</span></p>
+              <p>Quantity: <span>3</span></p>
+              <div class="card-actions justify-end">
+                <button id="card-umbrella" class="btn btn-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+          <!-- product -->
+          <div class="card card-compact w-full bg-base-100 shadow-xl">
+            <figure>
+              <img class="w-full h-40" src="./images/vue-js.jpg" alt="Shoes" />
+            </figure>
+            <div class="card-body">
+              <h2 class="card-title">Vue JS!</h2>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio,
+                non.
+              </p>
+              <input
+                type="number"
+                placeholder="Price"
+                class="input input-bordered w-full max-w-xs"
+              />
+              <input
+                type="number"
+                placeholder="Quantity"
+                class="input input-bordered w-full max-w-xs"
+              />
+              <div class="card-actions justify-end">
+                <button id="card-vue" class="btn btn-primary">Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- card calculate -->
+        <div class="cards-calculate w-full md:w-[32%]">
+          <h1 class="text-3xl text-center font-bold underline mb-4">
+            Total Products: <span>0</span>
+          </h1>
+          <!-- product list table -->
+          <div class="overflow-x-auto">
+            <table class="table w-full">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Quantity</th>
+                  <th>Total</th>
+                </tr>
+              </thead>
+              <tbody id="table-container">
+                <!-- dynamic create tr   -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- script file -->
+    <script src="js/app.js"></script>
+  </body>
+</html>
